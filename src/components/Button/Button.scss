@@ -1,0 +1,49 @@
+.btn {
+  padding: 10px 30px;
+  border: none;
+  font-size: 14px;
+  &-primary {
+    background-color: #7fc008;
+    color: #ffffff;
+  }
+  &-danger {
+    background-color: #db303f;
+    color: #ffffff;
+  }
+  &-default {
+    background-color: transparent;
+    color: #000;
+    border: #d0d5dd 1px solid;
+  }
+  &-text {
+    background-color: transparent;
+    color: #000;
+  }
+  &-icon {
+    display: flex;
+    gap: 6px;
+  }
+  &:hover {
+    border-color: none !important;
+  }
+}
+
+.btn__upload {
+  &-large {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    flex: 1;
+    flex-direction: column;
+    gap: 12px;
+  }
+  &-small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    gap: 6px;
+    padding: 10px;
+  }
+}
