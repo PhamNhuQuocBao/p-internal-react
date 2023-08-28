@@ -1,4 +1,4 @@
-import React from "react";
+import { memo, FC } from "react";
 import "./Button.scss";
 
 interface ButtonProps {
@@ -7,10 +7,10 @@ interface ButtonProps {
   style?: object;
   icon?: React.ReactNode;
   className?: string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button: FC<ButtonProps> = ({
   type,
   style,
   children,
@@ -44,4 +44,4 @@ Button.defaultProps = {
   className: "",
 };
 
-export default React.memo(Button);
+export default memo(Button);

@@ -1,4 +1,4 @@
-import * as React from "react";
+import { memo, FC } from "react";
 import { TypeInput } from "../../interfaces/input";
 import "./Input.scss";
 
@@ -9,10 +9,12 @@ interface InputProps {
   value?: string;
   placeholder?: string;
   style?: object;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  onChange?: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => void;
 }
 
-const Input: React.FC<InputProps> = ({
+const Input: FC<InputProps> = ({
   type,
   value,
   id,
@@ -44,4 +46,4 @@ Input.defaultProps = {
   style: {},
 };
 
-export default React.memo(Input);
+export default memo(Input);

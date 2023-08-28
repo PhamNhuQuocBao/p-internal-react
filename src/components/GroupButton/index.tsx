@@ -1,18 +1,18 @@
-import * as React from "react";
+import {memo, FC} from "react";
 import Button from "../Button";
 import "./GroupButton.scss";
 
 export interface TypeButtons {
   type: "primary" | "text" | "danger" | "default";
   children: React.ReactNode | string;
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 interface GroupButtonProps {
   items: TypeButtons[];
 }
 
-const GroupButton: React.FC<GroupButtonProps> = ({ items }) => {
+const GroupButton: FC<GroupButtonProps> = ({ items }) => {
   return (
     <div className="btn__group">
       {items.map((item) => (
@@ -24,4 +24,4 @@ const GroupButton: React.FC<GroupButtonProps> = ({ items }) => {
   );
 };
 
-export default React.memo(GroupButton);
+export default memo(GroupButton);

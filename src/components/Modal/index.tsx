@@ -1,22 +1,16 @@
-import React from "react";
+import { memo, FC, ReactNode } from "react";
 import Close from "../../assets/icons/Close.svg";
 import "./Modal.scss";
 
 interface ModalProps {
   title: string;
   close?: string;
-  header?: React.ReactNode;
-  footer?: React.ReactNode;
-  children?: React.ReactNode;
+  header?: ReactNode;
+  footer?: ReactNode;
+  children?: ReactNode;
 }
 
-const Modal: React.FC<ModalProps> = ({
-  title,
-  close,
-  header,
-  children,
-  footer,
-}) => {
+const Modal: FC<ModalProps> = ({ title, close, header, children, footer }) => {
   return (
     <div className="overlay modal">
       {header || (
@@ -35,4 +29,4 @@ Modal.defaultProps = {
   close: Close,
 };
 
-export default React.memo(Modal);
+export default memo(Modal);

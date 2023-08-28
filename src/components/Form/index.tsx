@@ -1,5 +1,5 @@
-import React from "react";
-import FormItem from "./FormItem";
+import {memo, FC} from "react";
+import FormItem from "./FormItem"; //contain a group include label and input tag
 import Input from "../Input";
 import Select from "../Select";
 import { OPTIONS_STATUS, OPTIONS_TYPES } from "../../constants/options";
@@ -13,7 +13,7 @@ interface FormProps {
   id?: string;
 }
 
-const Form: React.FC<FormProps> = () => {
+const Form: FC<FormProps> = () => {
   return (
     <>
       <form
@@ -109,4 +109,4 @@ const Form: React.FC<FormProps> = () => {
   );
 };
 
-export default React.memo(Form);
+export default memo(Form);

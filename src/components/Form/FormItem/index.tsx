@@ -1,14 +1,14 @@
-import * as React from "react";
+import { memo, FC, ReactNode } from "react";
 import "./FormItem.scss";
 
 interface FormItemProps {
   label?: string;
-  children: React.ReactNode;
-  classNameError: string;
+  children: ReactNode;
+  classNameError?: string;
   className?: string;
 }
 
-const FormItem: React.FC<FormItemProps> = ({
+const FormItem: FC<FormItemProps> = ({
   label,
   children,
   className,
@@ -26,6 +26,7 @@ const FormItem: React.FC<FormItemProps> = ({
 FormItem.defaultProps = {
   label: "",
   className: "form-group",
+  classNameError: "error-message",
 };
 
-export default React.memo(FormItem);
+export default memo(FormItem);
