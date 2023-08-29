@@ -1,5 +1,7 @@
 import { memo, FC } from "react";
+//import interfaces
 import { TypeInput } from "../../interfaces/input";
+//import stylesheets
 import "./Input.scss";
 
 interface InputProps {

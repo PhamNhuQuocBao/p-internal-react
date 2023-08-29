@@ -1,12 +1,16 @@
 import {memo, FC} from "react";
-import FormItem from "./FormItem"; //contain a group include label and input tag
+//import components
+import FormItem from "./FormItem";
 import Input from "../Input";
 import Select from "../Select";
-import { OPTIONS_STATUS, OPTIONS_TYPES } from "../../constants/options";
 import Button from "../Button";
+//import icons
 import UploadImageSolid from "../../assets/icons/UploadImageSolid.svg";
 import UploadCloud from "../../assets/icons/UploadCloud";
 import UploadImageDefault from "../../assets/icons/UploadImageDefault.svg";
+//import constants
+import { OPTIONS_STATUS, OPTIONS_TYPES } from "../../constants/options";
+//import stylesheets
 import "./Form.scss";
 
 interface FormProps {

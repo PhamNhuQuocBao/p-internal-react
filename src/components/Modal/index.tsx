@@ -1,5 +1,7 @@
 import { memo, FC, ReactNode } from "react";
+//import icons
 import Close from "../../assets/icons/Close.svg";
+//import stylesheets
 import "./Modal.scss";
 
 interface ModalProps {

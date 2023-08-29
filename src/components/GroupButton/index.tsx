@@ -1,5 +1,7 @@
 import {memo, FC} from "react";
+//import components
 import Button from "../Button";
+//import stylesheets
 import "./GroupButton.scss";
 
 export interface TypeButtons {

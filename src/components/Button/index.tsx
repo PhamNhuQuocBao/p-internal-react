@@ -1,4 +1,5 @@
 import { memo, FC } from "react";
+//import stylesheets
 import "./Button.scss";
 
 interface ButtonProps {
