@@ -1,0 +1,19 @@
+.tag {
+  padding: 0 5px;
+  border-radius: 5px;
+  &-primary {
+    border: 2px solid #7fc008;
+    color: #7fc008;
+  }
+  &-danger {
+    border: 2px solid #db303f;
+    color: #db303f;
+  }
+  &-default {
+    border: 2px solid #DFE2E9;
+    color: #454D59;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
