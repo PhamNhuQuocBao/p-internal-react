@@ -1,0 +1,32 @@
+.cols--2 {
+  display: flex;
+  gap: 32px;
+  .form-group {
+    flex: 1;
+  }
+}
+
+.cols--4 {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.img__upload {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f4f7;
+  border-radius: 50%;
+}
+
+.img--medium {
+  width: 65px;
+  height: 65px;
+}
+
+.img--small {
+  width: 35px;
+  height: 35px;
+}
