@@ -1,0 +1,19 @@
+.table__products {
+  margin: auto;
+  border-collapse: collapse;
+  width: 80%;
+  color: black;
+  thead {
+    border-bottom: 2px solid gray;
+  }
+  th {
+    text-align: left;
+  }
+  tr {
+  }
+  td {
+    border-bottom: 2px solid gray;
+    padding: 15px 0;
+    text-align: left;
+  }
+}
