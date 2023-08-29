@@ -6,7 +6,7 @@ import Dropdown from "./components/Dropdown";
 import More from "./assets/icons/More.svg";
 import Table from "./components/Table";
 
-const columns: ColumnType[] = [
+const columnsTable: ColumnType[] = [
   {
     title: "Name",
     key: "name",
@@ -44,7 +44,7 @@ const columns: ColumnType[] = [
   },
 ];
 
-const data: DataType[] = [
+const dataTable: DataType[] = [
   {
     id: 1,
     name: "Playstation 5",
@@ -68,7 +68,7 @@ const data: DataType[] = [
 const App: React.FC = () => {
   return (
     <>
-      <Table columns={columns} data={data} />
+      <Table columns={columnsTable} data={dataTable} />
     </>
   );
 };

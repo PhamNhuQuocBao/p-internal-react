@@ -12,6 +12,7 @@ const DropDown: FC<DropDownProps> = ({ children }) => {
   const handleOpen = () => {
     setOpen(!open);
   };
+  
   return (
     <div className="menu">
       <div className="trigger__menu" onClick={handleOpen}>
