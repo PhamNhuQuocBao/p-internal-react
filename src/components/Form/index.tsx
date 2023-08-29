@@ -2,7 +2,7 @@ import {memo, FC} from "react";
 import FormItem from "./FormItem"; //contain a group include label and input tag
 import Input from "../Input";
 import Select from "../Select";
-import { OPTIONS_STATUS, OPTIONS_TYPES } from "../../constants/options";
+import { optionStatus, optionType } from "../../constants/options";
 import Button from "../Button";
 import UploadImageSolid from "../../assets/icons/UploadImageSolid.svg";
 import UploadCloud from "../../assets/icons/UploadCloud";
@@ -57,10 +57,10 @@ const Form: FC<FormProps> = () => {
         </FormItem>
         <div className="cols--2">
           <FormItem classNameError="error-message" label="Status">
-            <Select id="status" name="status" options={OPTIONS_STATUS} />
+            <Select id="status" name="status" options={optionStatus} />
           </FormItem>
           <FormItem classNameError="error-message" label="Types">
-            <Select id="types" name="types" options={OPTIONS_TYPES} />
+            <Select id="types" name="types" options={optionType} />
           </FormItem>
         </div>
         <div className="cols--2">
