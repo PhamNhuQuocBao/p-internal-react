@@ -2,7 +2,8 @@ import { DataType } from "../../interfaces/table";
 import { API } from "../../utils/apiConfig";
 
 const endPoint = "/products";
-type IdProduct = Pick<DataType, "id">;
+
+export type IdProduct = keyof { [x: number]: DataType };
 
 export const getProduct = async () => {
   try {
