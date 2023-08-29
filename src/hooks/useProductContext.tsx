@@ -8,6 +8,7 @@ import {
   useCallback,
   useMemo,
 } from "react";
+//import API
 import {
   IdProduct,
   createProduct,
@@ -15,6 +16,7 @@ import {
   getProduct,
   updateProduct,
 } from "../store/product/api";
+//import interfaces
 import { DataType } from "../interfaces/table";
 
 interface ProductProvidersProps {
@@ -45,7 +47,7 @@ export const ProductProviders: FC<ProductProvidersProps> = ({ children }) => {
     };
 
     handleGetData();
-  }, [products]);
+  }, []);
 
   const handleCreateProduct = useCallback(async (product: DataType) => {
     try {
