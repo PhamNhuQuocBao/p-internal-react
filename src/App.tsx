@@ -43,8 +43,8 @@ const columnsTable: ColumnType[] = [
   {
     title: "Action",
     key: "action",
-    render: () => (
-      <Dropdown>
+    render: ({ id }) => (
+      <Dropdown id={id as number}>
         <img src={More} />
       </Dropdown>
     ),

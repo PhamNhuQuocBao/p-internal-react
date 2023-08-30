@@ -17,7 +17,7 @@ interface FormProps {
 }
 
 const Form: FC<FormProps> = () => {
-  const { setIsOpen } = useModalContext();
+  const { setIsOpenForm } = useModalContext();
   const { handleCreateProduct } = useProductContext();
   const [dataTable, setDataTable] = useState<DataType>({
     imageProduct: "",
@@ -32,7 +32,6 @@ const Form: FC<FormProps> = () => {
 
   const handleSubmit = useCallback(() => {
     handleCreateProduct(dataTable);
-    console.log(dataTable);
   }, [dataTable, handleCreateProduct]);
 
   return (
@@ -165,7 +164,7 @@ const Form: FC<FormProps> = () => {
           <Button
             type="default"
             onClick={() => {
-              setIsOpen(false);
+              setIsOpenForm(false);
             }}
           >
             Cancel

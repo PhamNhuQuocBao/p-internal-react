@@ -27,7 +27,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <>
       <button
-        className={`${className} btn btn-${type} ${icon ?? "btn-icon"}`}
+        className={`${className} btn btn-${type} ${icon ? "btn-icon" : ""}`}
         style={style}
         onClick={handleOnClick}
       >

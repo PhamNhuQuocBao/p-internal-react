@@ -12,8 +12,12 @@ interface ModalProvidersProps {
 }
 
 interface ModalContext {
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
+  isOpenForm: boolean;
+  setIsOpenForm: (isOpen: boolean) => void;
+  isConfirmDeleteOpen: boolean;
+  setIsConfirmDeleteOpen: (isOpen: boolean) => void;
+  isErrorModalOpen: boolean;
+  setIsErrorModalOpen: (isOpen: boolean) => void;
 }
 
 const ModalContext = createContext<ModalContext | undefined>(undefined);
@@ -25,11 +29,21 @@ export const useModalContext = () => {
 };
 
 export const ModalProviders: FC<ModalProvidersProps> = ({ children }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpenForm, setIsOpenForm] = useState<boolean>(false);
+  const [isConfirmDeleteOpen, setIsConfirmDeleteOpen] =
+    useState<boolean>(false);
+  const [isErrorModalOpen, setIsErrorModalOpen] = useState<boolean>(false);
 
   const valueContext = useMemo(() => {
-    return { isOpen, setIsOpen };
-  }, [isOpen, setIsOpen]);
+    return {
+      isOpenForm,
+      setIsOpenForm,
+      isConfirmDeleteOpen,
+      setIsConfirmDeleteOpen,
+      isErrorModalOpen,
+      setIsErrorModalOpen,
+    };
+  }, [isConfirmDeleteOpen, isErrorModalOpen, isOpenForm]);
 
   return (
     <ModalContext.Provider value={valueContext}>

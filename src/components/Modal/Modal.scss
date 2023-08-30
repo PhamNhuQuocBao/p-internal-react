@@ -8,7 +8,7 @@
   background-color: $bg-color-base;
   &__header {
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: start;
     margin-bottom: 24px;
     .title {
@@ -25,6 +25,18 @@
   &-hidden {
     display: none;
   }
+  .icon-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  .group__button__modal {
+    display: flex;
+    gap: 8px;
+    .btn {
+      flex: 1;
+    }
+  }
 }
 
 .overlay {
@@ -33,6 +45,7 @@
   height: 100vh;
   inset: 0;
   background-color: #0e0e0f58;
+  z-index: 99999;
 }
 
 .modal {

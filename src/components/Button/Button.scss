@@ -4,6 +4,7 @@
   padding: 10px 30px;
   border: none;
   font-size: 14px;
+  border-radius: 8px;
   &-primary {
     background-color: $bg-color-success;
     color: $bg-color-base;
@@ -27,6 +28,7 @@
   }
   &:hover {
     border-color: none !important;
+    cursor: pointer;
   }
 }
 
