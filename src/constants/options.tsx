@@ -1,6 +1,6 @@
 import { TypeOptions } from "../components/Select";
 
-export const OPTIONS_STATUS: Array<TypeOptions> = [
+export const optionStatus: TypeOptions[] = [
   {
     label: "Available",
     value: "Available",
@@ -11,7 +11,7 @@ export const OPTIONS_STATUS: Array<TypeOptions> = [
   },
 ];
 
-export const OPTIONS_TYPES: Array<TypeOptions> = [
+export const optionType: TypeOptions[] = [
   {
     label: "Gold",
     value: "Gold",

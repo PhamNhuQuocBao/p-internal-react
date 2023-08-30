@@ -9,7 +9,7 @@ import UploadImageSolid from "../../assets/icons/UploadImageSolid.svg";
 import UploadCloud from "../../assets/icons/UploadCloud";
 import UploadImageDefault from "../../assets/icons/UploadImageDefault.svg";
 //import constants
-import { OPTIONS_STATUS, OPTIONS_TYPES } from "../../constants/options";
+import { optionStatus, optionType } from "../../constants/options";
 //import stylesheets
 import "./Form.scss";
 
@@ -61,10 +61,10 @@ const Form: FC<FormProps> = () => {
         </FormItem>
         <div className="cols--2">
           <FormItem classNameError="error-message" label="Status">
-            <Select id="status" name="status" options={OPTIONS_STATUS} />
+            <Select id="status" name="status" options={optionStatus} />
           </FormItem>
           <FormItem classNameError="error-message" label="Types">
-            <Select id="types" name="types" options={OPTIONS_TYPES} />
+            <Select id="types" name="types" options={optionType} />
           </FormItem>
         </div>
         <div className="cols--2">
