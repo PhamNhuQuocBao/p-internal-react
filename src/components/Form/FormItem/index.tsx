@@ -17,7 +17,7 @@ const FormItem: FC<FormItemProps> = ({
 }) => {
   return (
     <div className={className}>
-      {label && <label>{label}</label>}
+      {label && <label className="form__label">{label}</label>}
       {children}
       <span className={classNameError}></span>
     </div>
