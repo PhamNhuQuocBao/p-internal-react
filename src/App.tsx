@@ -1,11 +1,16 @@
 import * as React from "react";
+//import stylesheets
 import "./App.css";
+//import interfaces
 import { ColumnType } from "./interfaces/table";
+//import icons
+import More from "./assets/icons/More.svg";
+//import components
 import Tag from "./components/Tag";
 import Dropdown from "./components/Dropdown";
-import More from "./assets/icons/More.svg";
 import Table from "./components/Table";
 import HomePage from "./views/pages/home";
+//import custom hooks
 import { useProductContext } from "./hooks/useProductContext";
 
 const columnsTable: ColumnType[] = [
