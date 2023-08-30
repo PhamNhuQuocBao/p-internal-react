@@ -1,3 +1,5 @@
+@import "../../assets/stylesheets/index.scss";
+
 .cols--2 {
   display: flex;
   gap: 32px;
@@ -17,7 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f2f4f7;
+  background-color: $bg-color-gray;
   border-radius: 50%;
 }
 

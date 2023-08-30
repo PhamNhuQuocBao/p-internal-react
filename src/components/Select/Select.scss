@@ -1,8 +1,10 @@
+@import "../../assets/stylesheets/index.scss";
+
 .select {
   box-sizing: border-box;
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid #D0D5DD ;
+  border: 1px solid $border-color-default;
   border-radius: 8px;
   * {
     padding: 20px;

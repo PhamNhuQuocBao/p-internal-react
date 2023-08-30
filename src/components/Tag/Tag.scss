@@ -1,17 +1,19 @@
+@import "../../assets/stylesheets/index.scss";
+
 .tag {
   padding: 0 5px;
   border-radius: 5px;
   &-primary {
-    border: 2px solid #7fc008;
-    color: #7fc008;
+    border: 2px solid $border-color-success;
+    color: $text-color-third;
   }
   &-danger {
-    border: 2px solid #db303f;
-    color: #db303f;
+    border: 2px solid $border-color-danger;
+    color: $text-color-danger;
   }
   &-default {
-    border: 2px solid #DFE2E9;
-    color: #454D59;
+    border: 2px solid $border-color-default;
+    color: $text-color-second;
   }
   &:hover {
     cursor: pointer;

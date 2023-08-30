@@ -1,4 +1,18 @@
-@mixin container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+//text-color
+$text-color-primary: #00072b;
+$text-color-danger: #db303f;
+$text-color-second: #475467;
+$text-color-third: #7fc008;
+$text-color-four: #6941c6;
+//bg-color
+$bg-color-success: #7fc008;
+$bg-color-danger: #db303f;
+$bg-color-gray: #f2f4f7;
+$bg-color-base: #ffffff;
+//text-shadow
+$text-shadow: 0 1px 2px #101828;
+$box-shadow: 0 0 20px rgba(0, 0, 0, 0.166);
+//border-color
+$border-color-success: #7fc008;
+$border-color-danger: #db303f;
+$border-color-default: #d0d5dd;

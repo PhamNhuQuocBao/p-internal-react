@@ -1,16 +1,18 @@
+@import '../../assets/stylesheets/index.scss';
+
 .table__products {
   margin: auto;
   border-collapse: collapse;
   width: 100%;
-  color: black;
+  color: $text-color-primary;
   .table__header {
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid $border-color-default;
   }
   .table__row.row-header {
     text-align: left;
   }
   .table__row.row-body {
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid $border-color-default;
     padding: 15px 0;
     text-align: left;
   }
