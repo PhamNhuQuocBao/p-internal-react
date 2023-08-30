@@ -1,4 +1,4 @@
-import { FC, ReactNode, memo, useState } from "react";
+import { FC, ReactNode, memo, useCallback, useState } from "react";
 import DropItem from "./DropItem";
 import "./Dropdown.scss";
 
@@ -9,10 +9,10 @@ interface DropDownProps {
 const DropDown: FC<DropDownProps> = ({ children }) => {
   const [open, setOpen] = useState<boolean>(false);
 
-  const handleOpen = () => {
+  const handleOpen = useCallback(() => {
     setOpen(!open);
-  };
-  
+  }, []);
+
   return (
     <div className="menu">
       <div className="trigger__menu" onClick={handleOpen}>

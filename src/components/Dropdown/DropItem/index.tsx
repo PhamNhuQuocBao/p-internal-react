@@ -1,4 +1,4 @@
-import { memo, FC, ReactNode } from "react";
+import { memo, FC, ReactNode, useCallback } from "react";
 
 interface DropItemProps {
   children: ReactNode;
@@ -7,11 +7,12 @@ interface DropItemProps {
 }
 
 const DropItem: FC<DropItemProps> = ({ children, onClick, type }) => {
-  const handleOnClick = () => {
+  const handleOnClick = useCallback(() => {
     if (onClick) {
       onClick();
     }
-  };
+  }, [onClick]);
+
   return (
     <li
       className={`dropdown__item dropdown__item-${type}`}

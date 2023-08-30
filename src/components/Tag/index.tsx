@@ -2,18 +2,24 @@ import { FC, ReactNode, memo } from "react";
 import "./Tag.scss";
 
 interface TagProps {
-  value: unknown;
+  value: string | number;
   children: ReactNode;
   className?: string;
 }
 
 const Tag: FC<TagProps> = ({ value, children, className }) => {
-  const type =
-    (value as string) === "Available"
-      ? "primary"
-      : (value as string) === "Sold out"
-      ? "danger"
-      : "default";
+  let type: string;
+  switch (value) {
+    case "Available":
+      type = "primary";
+      break;
+    case "Sold out":
+      type = "danger";
+      break;
+    default:
+      type = "default";
+  }
+
   return <span className={`tag tag-${type} ${className}`}>{children}</span>;
 };
 
