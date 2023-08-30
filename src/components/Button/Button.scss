@@ -1,23 +1,25 @@
+@import "../../assets/stylesheets/index.scss";
+
 .btn {
   padding: 10px 30px;
   border: none;
   font-size: 14px;
   &-primary {
-    background-color: #7fc008;
-    color: #ffffff;
+    background-color: $bg-color-success;
+    color: $bg-color-base;
   }
   &-danger {
-    background-color: #db303f;
-    color: #ffffff;
+    background-color: $bg-color-danger;
+    color: $bg-color-base;
   }
   &-default {
     background-color: transparent;
-    color: #000;
-    border: #d0d5dd 1px solid;
+    color: $text-color-primary;
+    border: $border-color-default 1px solid;
   }
   &-text {
     background-color: transparent;
-    color: #000;
+    color: $text-color-primary;
   }
   &-icon {
     display: flex;
@@ -49,7 +51,7 @@
 }
 
 .button-add {
-  border: 1px solid #7FC008;
-  color: #7FC008;
+  border: 1px solid $border-color-success;
+  color: $text-color-third;
   border-radius: 3px;
 }

@@ -1,9 +1,11 @@
+@import "../../assets/stylesheets/index.scss";
+
 .modal {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.166);
+  box-shadow: $box-shadow;
   border-radius: 10px;
   padding: 16px;
   max-width: 400px;
-  background-color: #fff;
+  background-color: $bg-color-base;
   &__header {
     display: flex;
     justify-content: space-between;

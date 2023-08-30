@@ -1,3 +1,5 @@
+@import "../../assets/stylesheets/index.scss";
+
 .menu {
   position: relative;
   .trigger__menu {
@@ -16,10 +18,10 @@
       text-align: center;
       cursor: pointer;
       &-danger {
-        color: #db303f;
+        color: $text-color-danger;
       }
       &-text {
-        color: #00072b;
+        color: $text-color-primary;
       }
     }
   }
@@ -30,7 +32,7 @@
     left: -80%;
     border-radius: 10px;
     width: 100px;
-    background-color: #fff;
+    background-color: $bg-color-base;
     box-shadow: 0 0 5px #c7c7c7;
     &::before {
       content: "";
