@@ -1,4 +1,4 @@
-import {memo, FC} from "react";
+import { memo, FC } from "react";
 //import components
 import FormItem from "./FormItem";
 import Input from "../Input";
@@ -12,12 +12,14 @@ import UploadImageDefault from "../../assets/icons/UploadImageDefault.svg";
 import { optionStatus, optionType } from "../../constants/options";
 //import stylesheets
 import "./Form.scss";
+import { useModalContext } from "../../hooks/useModal";
 
 interface FormProps {
   id?: string;
 }
 
 const Form: FC<FormProps> = () => {
+  const { setIsOpen } = useModalContext();
   return (
     <>
       <form
@@ -101,7 +103,12 @@ const Form: FC<FormProps> = () => {
           className="cols--2"
           style={{ display: "fex", justifyContent: "end", marginTop: "20px" }}
         >
-          <Button type="default" onClick={() => {}}>
+          <Button
+            type="default"
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
             Cancel
           </Button>
           <Button type="primary" onClick={() => {}}>

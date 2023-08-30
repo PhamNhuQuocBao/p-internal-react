@@ -1,0 +1,19 @@
+@import "../../../assets/stylesheets/variable.scss";
+
+.container {
+  @include container;
+}
+
+.homepage__title {
+  text-align: left;
+  color: #0c0033;
+  font-size: 60px;
+  margin: 0 auto 20px;
+}
+
+.homepage__button {
+  display: flex;
+  justify-content: end;
+  text-shadow: 0 1px 2px #101828;
+  margin-bottom: 30px;
+}

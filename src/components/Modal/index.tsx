@@ -10,25 +10,36 @@ interface ModalProps {
   header?: ReactNode;
   footer?: ReactNode;
   children?: ReactNode;
+  open?: boolean;
 }
 
-const Modal: FC<ModalProps> = ({ title, close, header, children, footer }) => {
+const Modal: FC<ModalProps> = ({
+  title,
+  close,
+  header,
+  children,
+  footer,
+  open,
+}) => {
   return (
-    <div className="overlay modal">
-      {header || (
-        <div className="modal__header">
-          <p className="title">{title}</p>
-          <img src={close} className="icon-close" />
-        </div>
-      )}
-      {children}
-      {footer}
+    <div className={`overlay modal-${open ? "open" : "hidden"}`}>
+      <div className={`modal`}>
+        {header || (
+          <div className="modal__header">
+            <p className="title">{title}</p>
+            <img src={close} className="icon-close" />
+          </div>
+        )}
+        {children}
+        {footer}
+      </div>
     </div>
   );
 };
 
 Modal.defaultProps = {
   close: Close,
+  open: false,
 };
 
 export default memo(Modal);

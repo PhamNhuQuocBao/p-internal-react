@@ -1,10 +1,17 @@
 import * as React from "react";
+//import stylesheets
 import "./App.css";
-import { ColumnType, DataType } from "./interfaces/table";
+//import interfaces
+import { ColumnType } from "./interfaces/table";
+//import icons
+import More from "./assets/icons/More.svg";
+//import components
 import Tag from "./components/Tag";
 import Dropdown from "./components/Dropdown";
-import More from "./assets/icons/More.svg";
 import Table from "./components/Table";
+import HomePage from "./views/pages/home";
+//import custom hooks
+import { useProductContext } from "./hooks/useProductContext";
 
 const columnsTable: ColumnType[] = [
   {
@@ -44,31 +51,13 @@ const columnsTable: ColumnType[] = [
   },
 ];
 
-const dataTable: DataType[] = [
-  {
-    id: 1,
-    name: "Playstation 5",
-    status: "Available",
-    types: "Kin",
-    quantity: 5000,
-    price: 3000,
-    brand: "KinDubai",
-  },
-  {
-    id: 2,
-    status: "Sold out",
-    name: "Playstation 3",
-    types: "Kin",
-    quantity: 5000,
-    price: 3000,
-    brand: "KinDubai",
-  },
-];
-
 const App: React.FC = () => {
+  const { products } = useProductContext();
   return (
     <>
-      <Table columns={columnsTable} data={dataTable} />
+      <HomePage titlePage="Management">
+        <Table columns={columnsTable} data={products} />
+      </HomePage>
     </>
   );
 };
