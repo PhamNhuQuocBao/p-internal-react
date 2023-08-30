@@ -27,9 +27,9 @@ const Modal: FC<ModalProps> = ({
         {header || (
           <div className="modal__header">
             <p className="title">{title}</p>
-            <img src={close} className="icon-close" />
           </div>
         )}
+        <img src={close} className="icon-close" />
         {children}
         {footer}
       </div>

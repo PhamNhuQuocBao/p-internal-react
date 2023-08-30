@@ -77,7 +77,7 @@ export const ProductProviders: FC<ProductProvidersProps> = ({ children }) => {
       return product.id !== id;
     });
     setProducts(productIsNotDeleted);
-  }, []);
+  }, [products]);
 
   const valueContext = useMemo(() => {
     return {

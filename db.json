@@ -1,3 +1,15 @@
 {
-  "products": []
+  "products": [
+    {
+      "imageProduct": "sdfasf",
+      "name": "sadf",
+      "status": "Available",
+      "types": "Silver",
+      "quantity": "0324",
+      "price": "0234",
+      "brand": "asfd",
+      "imageBrand": "saf",
+      "id": 1
+    }
+  ]
 }
