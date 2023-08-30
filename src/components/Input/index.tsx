@@ -8,7 +8,7 @@ interface InputProps {
   type?: TypeInput;
   id?: string;
   name?: string;
-  value?: string;
+  value?: string | number;
   placeholder?: string;
   style?: object;
   onChange?: (

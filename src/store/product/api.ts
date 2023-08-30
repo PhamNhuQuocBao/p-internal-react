@@ -3,7 +3,7 @@ import { API } from "../../utils/apiConfig";
 
 const endPoint = "/products";
 
-export type IdProduct = keyof { [x: number]: DataType };
+export type IdProduct = number;
 
 export const getProduct = async () => {
   try {

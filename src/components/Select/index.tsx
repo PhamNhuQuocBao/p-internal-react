@@ -5,20 +5,34 @@ import "./Select.scss";
 export interface TypeOptions {
   label: string;
   value: string;
+  disable: boolean;
 }
 
 interface SelectProps {
   id?: string;
   name?: string;
+  value?: string;
   options: Array<TypeOptions>;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
-const Select: React.FC<SelectProps> = ({ id, name, options, onChange }) => {
+const Select: React.FC<SelectProps> = ({
+  id,
+  name,
+  options,
+  onChange,
+  value,
+}) => {
   return (
-    <select id={id} name={name} className="select" onChange={onChange}>
-      {options.map(({ label, value }, index) => (
-        <option value={value} key={index}>
+    <select
+      id={id}
+      name={name}
+      className="select"
+      onChange={onChange}
+      value={value}
+    >
+      {options.map(({ label, value, disable }, index) => (
+        <option value={value} key={index} disabled={disable}>
           {label}
         </option>
       ))}
@@ -29,6 +43,7 @@ const Select: React.FC<SelectProps> = ({ id, name, options, onChange }) => {
 Select.defaultProps = {
   id: "",
   name: "",
+  value: "Available",
 };
 
 export default React.memo(Select);

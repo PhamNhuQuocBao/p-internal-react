@@ -7,12 +7,13 @@ export interface ColumnType {
 }
 
 export interface DataType {
-  id: number;
+  imageProduct: string;
   name: string;
   status: string;
   types: string;
   quantity: number;
   price: number;
   brand: string;
+  imageBrand: string;
   [index: string]: number | string;
 }
