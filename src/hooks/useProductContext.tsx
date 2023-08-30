@@ -34,6 +34,7 @@ const ProductContext = createContext<ProductContext | undefined>(undefined);
 
 export const useProductContext = () => {
   const context = useContext(ProductContext);
+  if (!context) throw new Error("Context is undefined");
   return context;
 };
 
