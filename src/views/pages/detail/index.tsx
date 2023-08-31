@@ -1,14 +1,14 @@
-import { FC, memo } from "react";
-import { DataType } from "../../../interfaces/table";
+// import { FC, memo } from "react";
+// import { DataType } from "../../../interfaces/table";
 
-interface DetailPageProps {
-    product: DataType;
-}
+// interface DetailPageProps {
+//     product: DataType;
+// }
 
-const DetailPage: FC = () => {
-  return <>
-    <main className="container"></main>
-  </>; 
-};
+// const DetailPage: FC = () => {
+//   return <>
+//     <main className="container"></main>
+//   </>; 
+// };
 
-export default memo(DetailPage);
+// export default memo(DetailPage);
