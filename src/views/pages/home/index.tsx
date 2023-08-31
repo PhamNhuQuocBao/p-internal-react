@@ -1,4 +1,5 @@
 import { FC, ReactNode, memo, useCallback } from "react";
+import { Link } from "react-router-dom";
 //import stylesheets
 import "./HomePage.scss";
 //import components
@@ -8,16 +9,68 @@ import Modal from "../../../components/Modal";
 import Form from "../../../components/Form";
 //import icons
 import Trash from "../../../assets/icons/Trash.svg";
+import More from "../../../assets/icons/More.svg";
 import Toast from "../../../components/Toast";
 import { useProductContext } from "../../../hooks/useProductContext";
 import { useIdSelected } from "../../../hooks/useIdSelected";
+import Table from "../../../components/Table";
+import { ColumnType } from "../../../interfaces/table";
+import Tag from "../../../components/Tag";
+import Dropdown from "../../../components/Dropdown";
 
 interface HomePageProps {
   titlePage?: string;
   children?: ReactNode;
 }
 
-const HomePage: FC<HomePageProps> = ({ titlePage, children }) => {
+const columnsTable: ColumnType[] = [
+  {
+    title: "Name",
+    key: "name",
+    render: ({ name, imageProduct, id }) => (
+      <Link to={`/detail/product/${id}`}>
+        <div className="product">
+          <img className="product__image" src={imageProduct} alt={name} />
+          <p className="product__name">{name}</p>
+        </div>
+      </Link>
+    ),
+  },
+  {
+    title: "Status",
+    key: "status",
+    render: ({ status }) => <Tag value={status}>{status}</Tag>,
+  },
+  {
+    title: "Types",
+    key: "types",
+  },
+  {
+    title: "Quantity",
+    key: "quantity",
+    render: ({ quantity }) => <Tag value={quantity}>{quantity}</Tag>,
+  },
+  {
+    title: "Price",
+    key: "price",
+    render: ({ price }) => <span>{`$${price}`}</span>,
+  },
+  {
+    title: "Brand",
+    key: "brand",
+  },
+  {
+    title: "Action",
+    key: "action",
+    render: ({ id }) => (
+      <Dropdown id={id as number}>
+        <img src={More} />
+      </Dropdown>
+    ),
+  },
+];
+
+const HomePage: FC<HomePageProps> = ({ titlePage }) => {
   const {
     isOpenForm,
     setIsOpenForm,
@@ -30,7 +83,7 @@ const HomePage: FC<HomePageProps> = ({ titlePage, children }) => {
 
   const { idSelected } = useIdSelected();
 
-  const { handleDeleteProduct } = useProductContext();
+  const { handleDeleteProduct, products } = useProductContext();
 
   const handleOpenModal = () => {
     setIsOpenForm(!isOpenForm);
@@ -50,7 +103,10 @@ const HomePage: FC<HomePageProps> = ({ titlePage, children }) => {
             Add New Product
           </Button>
         </div>
-        <section className="homepage__content">{children}</section>;
+        <section className="homepage__content">
+          <Table columns={columnsTable} data={products} />
+        </section>
+        ;
       </main>
       {isOpenForm && (
         <Modal title="Add new product" open={isOpenForm}>

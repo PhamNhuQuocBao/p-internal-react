@@ -14,6 +14,8 @@ interface ModalProvidersProps {
 interface ModalContext {
   isOpenForm: boolean;
   setIsOpenForm: (isOpen: boolean) => void;
+  isOpenDetailPage: boolean;
+  setIsOpenDetailPage: (isOpen: boolean) => void;
   isOpenFormUpdate: boolean;
   setIsOpenFormUpdate: (isOpen: boolean) => void;
   isConfirmDeleteOpen: boolean;
@@ -33,6 +35,7 @@ export const useModalContext = () => {
 export const ModalProviders: FC<ModalProvidersProps> = ({ children }) => {
   const [isOpenForm, setIsOpenForm] = useState<boolean>(false);
   const [isOpenFormUpdate, setIsOpenFormUpdate] = useState<boolean>(false);
+  const [isOpenDetailPage, setIsOpenDetailPage] = useState<boolean>(false);
   const [isConfirmDeleteOpen, setIsConfirmDeleteOpen] =
     useState<boolean>(false);
   const [isErrorModalOpen, setIsErrorModalOpen] = useState<boolean>(false);
@@ -41,6 +44,8 @@ export const ModalProviders: FC<ModalProvidersProps> = ({ children }) => {
     return {
       isOpenForm,
       setIsOpenForm,
+      isOpenDetailPage,
+      setIsOpenDetailPage,
       isOpenFormUpdate,
       setIsOpenFormUpdate,
       isConfirmDeleteOpen,
@@ -48,7 +53,7 @@ export const ModalProviders: FC<ModalProvidersProps> = ({ children }) => {
       isErrorModalOpen,
       setIsErrorModalOpen,
     };
-  }, [isConfirmDeleteOpen, isErrorModalOpen, isOpenForm, isOpenFormUpdate]);
+  }, [isConfirmDeleteOpen, isErrorModalOpen, isOpenDetailPage, isOpenForm, isOpenFormUpdate]);
 
   return (
     <ModalContext.Provider value={valueContext}>

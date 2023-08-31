@@ -1,71 +1,34 @@
 import * as React from "react";
 //import stylesheets
 import "./App.css";
-//import interfaces
-import { ColumnType } from "./interfaces/table";
-//import icons
-import More from "./assets/icons/More.svg";
 //import components
-import Tag from "./components/Tag";
-import Dropdown from "./components/Dropdown";
-import Table from "./components/Table";
 import HomePage from "./views/pages/home";
+import DetailPage from "./views/pages/detail";
 //import custom hooks
-import { useProductContext } from "./hooks/useProductContext";
-
-const columnsTable: ColumnType[] = [
-  {
-    title: "Name",
-    key: "name",
-    render: ({ name, imageProduct }) => (
-      <div className="product">
-        <img className="product__image" src={imageProduct} alt={name} />
-        <p className="product__name">{name}</p>
-      </div>
-    ),
-  },
-  {
-    title: "Status",
-    key: "status",
-    render: ({ status }) => <Tag value={status}>{status}</Tag>,
-  },
-  {
-    title: "Types",
-    key: "types",
-  },
-  {
-    title: "Quantity",
-    key: "quantity",
-    render: ({ quantity }) => <Tag value={quantity}>{quantity}</Tag>,
-  },
-  {
-    title: "Price",
-    key: "price",
-    render: ({ price }) => <span>{`$${price}`}</span>,
-  },
-  {
-    title: "Brand",
-    key: "brand",
-  },
-  {
-    title: "Action",
-    key: "action",
-    render: ({ id }) => (
-      <Dropdown id={id as number}>
-        <img src={More} />
-      </Dropdown>
-    ),
-  },
-];
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useIdSelected } from "./hooks/useIdSelected";
 
 const App: React.FC = () => {
-  const { products } = useProductContext();
-
+  const { idSelected } = useIdSelected();
   return (
     <>
-      <HomePage titlePage="Management">
+      {/* <HomePage titlePage="Management">
         <Table columns={columnsTable} data={products} />
       </HomePage>
+      {isOpenDetailPage && (
+        <Modal title="Detail Page">
+          <Detail product={idSelected} />
+        </Modal>
+      )} */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path={`/detail/product/${idSelected}`}
+            element={<DetailPage id={idSelected} />}
+          />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 };

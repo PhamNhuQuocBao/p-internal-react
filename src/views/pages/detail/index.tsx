@@ -1,14 +1,22 @@
-// import { FC, memo } from "react";
-// import { DataType } from "../../../interfaces/table";
+import { FC, memo } from "react";
+import "./DetailPage.scss";
+import DetailForm from "./components/DetailForm";
 
-// interface DetailPageProps {
-//     product: DataType;
-// }
+interface DetailPageProps {
+  // product: DataType;
+  id: number;
+}
 
-// const DetailPage: FC = () => {
-//   return <>
-//     <main className="container"></main>
-//   </>; 
-// };
+const DetailPage: FC<DetailPageProps> = ({ id }) => {
+  return (
+    <>
+      <main className="container">
+        <section className="detailpage__content">
+          <DetailForm id={id} />
+        </section>
+      </main>
+    </>
+  );
+};
 
-// export default memo(DetailPage);
+export default memo(DetailPage);
