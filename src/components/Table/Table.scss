@@ -1,4 +1,4 @@
-@import '../../assets/stylesheets/index.scss';
+@import "../../assets/stylesheets/index.scss";
 
 .table__products {
   margin: auto;
@@ -13,7 +13,19 @@
   }
   .table__row.row-body {
     border-bottom: 2px solid $border-color-default;
-    padding: 15px 0;
+    padding: 10px 0;
     text-align: left;
+  }
+  .product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    &__image {
+      width: 50px;
+      height: 50px;
+    }
+    &__name {
+      margin: 0;
+    }
   }
 }

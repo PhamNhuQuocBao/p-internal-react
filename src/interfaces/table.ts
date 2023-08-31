@@ -7,6 +7,7 @@ export interface ColumnType {
 }
 
 export interface DataType {
+  id: number;
   imageProduct: string;
   name: string;
   status: string;

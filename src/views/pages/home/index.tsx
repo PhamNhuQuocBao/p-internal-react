@@ -21,6 +21,7 @@ const HomePage: FC<HomePageProps> = ({ titlePage, children }) => {
   const {
     isOpenForm,
     setIsOpenForm,
+    isOpenFormUpdate,
     isConfirmDeleteOpen,
     setIsConfirmDeleteOpen,
     isErrorModalOpen,
@@ -54,6 +55,11 @@ const HomePage: FC<HomePageProps> = ({ titlePage, children }) => {
       {isOpenForm && (
         <Modal title="Add new product" open={isOpenForm}>
           <Form />
+        </Modal>
+      )}
+      {isOpenFormUpdate && (
+        <Modal title="Products information" open={isOpenFormUpdate}>
+          <Form id={idSelected} />
         </Modal>
       )}
       {isConfirmDeleteOpen && (

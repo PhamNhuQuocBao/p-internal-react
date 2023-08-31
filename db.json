@@ -1,15 +1,48 @@
 {
   "products": [
     {
-      "imageProduct": "sdfasf",
-      "name": "sadf",
+      "imageProduct": "https://nhanmachatc.com/wp-content/uploads/2021/08/hinh-in-ao-thun-theo-yeu-cau-la-gi.jpg",
+      "name": "Quần",
+      "status": "Available",
+      "types": "Gold",
+      "quantity": "234",
+      "price": "2950239",
+      "brand": "asdf",
+      "imageBrand": "saf",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "imageProduct": "asjdfasdkj",
+      "name": "Mũ",
+      "status": "Available",
+      "types": "Gold",
+      "quantity": "234",
+      "price": "3924",
+      "brand": "sadf",
+      "imageBrand": "ádf"
+    },
+    {
+      "id": 1693463951464,
+      "imageProduct": "ádf",
+      "name": "Áo",
+      "status": "Sold out",
+      "types": "Diamond",
+      "quantity": "3",
+      "price": "43243",
+      "brand": "à",
+      "imageBrand": "234saf"
+    },
+    {
+      "id": 1693472801823,
+      "imageProduct": "ádf",
+      "name": "ád",
       "status": "Available",
       "types": "Silver",
       "quantity": "0324",
       "price": "0234",
-      "brand": "asfd",
-      "imageBrand": "saf",
-      "id": 1
+      "brand": "sadf",
+      "imageBrand": "adf"
     }
   ]
 }

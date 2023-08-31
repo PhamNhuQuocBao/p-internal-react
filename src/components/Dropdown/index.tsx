@@ -14,18 +14,24 @@ interface DropDownProps {
 
 const DropDown: FC<DropDownProps> = ({ children, id }) => {
   const [open, setOpen] = useState<boolean>(false);
-  const { setIsConfirmDeleteOpen } = useModalContext();
+  const { setIsConfirmDeleteOpen, setIsOpenFormUpdate } = useModalContext();
   const { setIdSelected } = useIdSelected();
 
   const handleOpen = useCallback(() => {
     setOpen(!open);
-  }, []);
+  }, [open]);
 
-  const handleClickEdit = useCallback(() => {}, []);
+  const handleClickEdit = useCallback(() => {
+    setIdSelected(id);
+    setIsOpenFormUpdate(true);
+    handleOpen();
+  }, [handleOpen, id, setIdSelected, setIsOpenFormUpdate]);
+
   const handleClickDelete = useCallback(() => {
     setIdSelected(id);
     setIsConfirmDeleteOpen(true);
-  }, [id, setIdSelected, setIsConfirmDeleteOpen]);
+    handleOpen();
+  }, [handleOpen, id, setIdSelected, setIsConfirmDeleteOpen]);
 
   return (
     <div className="menu">
@@ -33,12 +39,14 @@ const DropDown: FC<DropDownProps> = ({ children, id }) => {
         {children}
       </div>
       <div className={`dropdown__menu ${open ? "active" : "inactive"}`}>
-        <ul className="list__dropdown">
-          <DropItem onClick={handleClickEdit}>Edit</DropItem>
-          <DropItem onClick={handleClickDelete} type="danger">
-            Delete
-          </DropItem>
-        </ul>
+        {open && (
+          <ul className="list__dropdown">
+            <DropItem onClick={handleClickEdit}>Edit</DropItem>
+            <DropItem onClick={handleClickDelete} type="danger">
+              Delete
+            </DropItem>
+          </ul>
+        )}
       </div>
     </div>
   );
