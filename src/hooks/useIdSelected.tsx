@@ -27,7 +27,7 @@ export const useIdSelected = () => {
 };
 
 export const IdSelectedProviders: FC<IdSelectedProps> = ({ children }) => {
-  const [idSelected, setIdSelected] = useState<number>(1);
+  const [idSelected, setIdSelected] = useState<number>(0);
 
   const valueContext = useMemo(() => {
     return {

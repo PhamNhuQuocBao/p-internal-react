@@ -17,6 +17,12 @@ const columnsTable: ColumnType[] = [
   {
     title: "Name",
     key: "name",
+    render: ({ name, imageProduct }) => (
+      <div className="product">
+        <img className="product__image" src={imageProduct} alt={name} />
+        <p className="product__name">{name}</p>
+      </div>
+    ),
   },
   {
     title: "Status",
@@ -35,6 +41,7 @@ const columnsTable: ColumnType[] = [
   {
     title: "Price",
     key: "price",
+    render: ({ price }) => <span>{`$${price}`}</span>,
   },
   {
     title: "Brand",
@@ -53,6 +60,7 @@ const columnsTable: ColumnType[] = [
 
 const App: React.FC = () => {
   const { products } = useProductContext();
+
   return (
     <>
       <HomePage titlePage="Management">

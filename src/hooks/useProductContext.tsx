@@ -60,24 +60,31 @@ export const ProductProviders: FC<ProductProvidersProps> = ({ children }) => {
   }, []);
 
   const handleUpdateProduct = useCallback(
-    async (id: IdProduct, product: DataType) => {
+    async (id: IdProduct, newProduct: DataType) => {
       try {
-        await updateProduct(id, product);
-        setProducts((prevData) => [...prevData, product]);
+        await updateProduct(id, newProduct);
+        const newProducts = products.map((product) => {
+          return product.id === id ? newProduct : product;
+        });
+
+        setProducts(newProducts);
       } catch (error) {
         throw new Error("Failed to update data");
       }
     },
-    []
+    [products]
   );
 
-  const handleDeleteProduct = useCallback(async (id: IdProduct) => {
-    await deleteProduct(id);
-    const productIsNotDeleted = products.filter((product) => {
-      return product.id !== id;
-    });
-    setProducts(productIsNotDeleted);
-  }, [products]);
+  const handleDeleteProduct = useCallback(
+    async (id: IdProduct) => {
+      await deleteProduct(id);
+      const productIsNotDeleted = products.filter((product) => {
+        return product.id !== id;
+      });
+      setProducts(productIsNotDeleted);
+    },
+    [products]
+  );
 
   const valueContext = useMemo(() => {
     return {
