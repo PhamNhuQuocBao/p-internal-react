@@ -25,7 +25,7 @@ export const createProduct = async (product: DataType) => {
 
 export const updateProduct = async (id: IdProduct, product: DataType) => {
   try {
-    const res = await API.put(`${endPoint}/${id}`, product);
+    const res = await API.put(`${endPoint}/:${id}`, product);
     return res.data;
   } catch (error) {
     throw new Error("Failed to update data");
@@ -34,7 +34,7 @@ export const updateProduct = async (id: IdProduct, product: DataType) => {
 
 export const deleteProduct = async (id: IdProduct) => {
   try {
-    const res = await API.delete(`${endPoint}/${id}`);
+    const res = await API.delete(`${endPoint}/:${id}`);
     return res.data;
   } catch (error) {
     throw new Error("Failed to update data");
