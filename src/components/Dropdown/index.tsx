@@ -18,8 +18,8 @@ const DropDown: FC<DropDownProps> = ({ children, id }) => {
   const { setIdSelected } = useIdSelected();
 
   const handleOpen = useCallback(() => {
-    setOpen(!open);
-  }, [open]);
+    setOpen((prev) => (!prev));
+  }, []);
 
   const handleClickEdit = useCallback(() => {
     setIdSelected(id);

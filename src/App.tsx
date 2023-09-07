@@ -1,4 +1,4 @@
-import * as React from "react";
+import { FC } from "react";
 //import stylesheets
 import "./App.css";
 //import components
@@ -8,21 +8,13 @@ import DetailPage from "./views/pages/detail";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useIdSelected } from "./hooks/useIdSelected";
 
-const App: React.FC = () => {
+const App: FC = () => {
   const { idSelected } = useIdSelected();
   return (
     <>
-      {/* <HomePage titlePage="Management">
-        <Table columns={columnsTable} data={products} />
-      </HomePage>
-      {isOpenDetailPage && (
-        <Modal title="Detail Page">
-          <Detail product={idSelected} />
-        </Modal>
-      )} */}
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage/>} />
           <Route
             path={`/detail/product/${idSelected}`}
             element={<DetailPage id={idSelected} />}

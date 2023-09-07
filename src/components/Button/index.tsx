@@ -19,17 +19,13 @@ const Button: FC<ButtonProps> = ({
   className,
   onClick,
 }) => {
-  const handleOnClick = () => {
-    if (onClick) {
-      onClick();
-    }
-  };
+
   return (
     <>
       <button
         className={`${className} btn btn-${type} ${icon ? "btn-icon" : ""}`}
         style={style}
-        onClick={handleOnClick}
+        onClick={onClick}
       >
         {icon}
         {children}
@@ -43,6 +39,7 @@ Button.defaultProps = {
   style: {},
   icon: undefined,
   className: "",
+  onClick: () => {},
 };
 
 export default memo(Button);

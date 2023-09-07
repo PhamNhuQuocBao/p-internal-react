@@ -1,4 +1,4 @@
-import { FC, ReactNode, memo, useCallback } from "react";
+import { FC, memo, useCallback, lazy, Suspense } from "react";
 import { Link } from "react-router-dom";
 //import stylesheets
 import "./HomePage.scss";
@@ -13,14 +13,14 @@ import More from "../../../assets/icons/More.svg";
 import Toast from "../../../components/Toast";
 import { useProductContext } from "../../../hooks/useProductContext";
 import { useIdSelected } from "../../../hooks/useIdSelected";
-import Table from "../../../components/Table";
+// import Table from "../../../components/Table";
 import { ColumnType } from "../../../interfaces/table";
 import Tag from "../../../components/Tag";
 import Dropdown from "../../../components/Dropdown";
+import Loading from "../../../components/Loading";
 
 interface HomePageProps {
   titlePage?: string;
-  children?: ReactNode;
 }
 
 const columnsTable: ColumnType[] = [
@@ -70,6 +70,8 @@ const columnsTable: ColumnType[] = [
   },
 ];
 
+const Table = lazy(() => import("../../../components/Table"));
+
 const HomePage: FC<HomePageProps> = ({ titlePage }) => {
   const {
     isOpenForm,
@@ -104,7 +106,9 @@ const HomePage: FC<HomePageProps> = ({ titlePage }) => {
           </Button>
         </div>
         <section className="homepage__content">
-          <Table columns={columnsTable} data={products} />
+          <Suspense fallback={<Loading />}>
+            <Table columns={columnsTable} data={products} />
+          </Suspense>
         </section>
         ;
       </main>
@@ -167,7 +171,7 @@ const HomePage: FC<HomePageProps> = ({ titlePage }) => {
 };
 
 HomePage.defaultProps = {
-  titlePage: "Home Page",
+  titlePage: "Management",
 };
 
 export default memo(HomePage);

@@ -1,8 +1,10 @@
 import { FC, memo } from "react";
+//import components
 import { ColumnType, DataType } from "../../interfaces/table";
-import "./Table.scss";
 import { useModalContext } from "../../hooks/useModal";
 import { useIdSelected } from "../../hooks/useIdSelected";
+//import stylesheets
+import "./Table.scss";
 
 interface TableProps {
   columns: ColumnType[];
